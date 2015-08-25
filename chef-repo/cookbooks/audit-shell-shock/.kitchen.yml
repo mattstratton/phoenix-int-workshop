@@ -14,5 +14,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[audit-cve::default]
+      - recipe[audit-shell-shock::default]
     attributes:
