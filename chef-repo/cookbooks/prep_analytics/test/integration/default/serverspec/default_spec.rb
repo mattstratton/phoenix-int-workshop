@@ -6,7 +6,7 @@ describe 'prep_analytics::default' do
   context 'ntp' do
     it 'is running' do
       expect(service 'ntpd').to be_running
-   end
+    end
 
     it 'is enabled' do
       expect(service 'ntpd').to be_enabled
@@ -15,7 +15,7 @@ describe 'prep_analytics::default' do
   context 'qpidd' do
     it 'is stopped' do
       expect(service 'qpidd').not_to be_running
-   end
+    end
 
     it 'is enabled' do
       expect(service 'qpidd').not_to be_enabled
@@ -24,7 +24,7 @@ describe 'prep_analytics::default' do
   context 'selinux' do
     it 'is stopped' do
       expect(service 'selinux').not_to be_running
-   end
+    end
 
     it 'is enabled' do
       expect(service 'selinux').not_to be_enabled

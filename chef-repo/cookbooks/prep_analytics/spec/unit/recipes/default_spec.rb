@@ -9,7 +9,10 @@ require 'spec_helper'
 describe 'prep_analytics::default' do
   context 'When all attributes are default, on CentOS 7.1' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(:platform => 'centos', :version => '7.1.1503')
+      runner = ChefSpec::ServerRunner.new(
+        :platform => 'centos',
+        :version => '7.1.1503'
+      )
       runner.converge(described_recipe)
     end
 
@@ -28,15 +31,15 @@ describe 'prep_analytics::default' do
     it 'enables ntp' do
       expect(chef_run).to enable_service 'ntpd'
     end
-    
+
     it 'stops qpidd' do
       expect(chef_run).to stop_service 'qpidd'
     end
-    
+
     it 'disables qpidd' do
       expect(chef_run).to disable_service 'qpidd'
     end
-    
+
     it 'stops selinux' do
       expect(chef_run).to stop_service 'selinux'
     end
