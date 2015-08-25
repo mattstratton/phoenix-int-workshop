@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: audit-cve
+# Cookbook Name:: audit-shell-shock
 # Recipe:: default
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
