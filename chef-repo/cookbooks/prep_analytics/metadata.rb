@@ -1,0 +1,7 @@
+name 'prep_analytics'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures prep_analytics'
+long_description 'Installs/Configures prep_analytics'
+version '0.1.0'
