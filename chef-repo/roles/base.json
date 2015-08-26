@@ -1,0 +1,12 @@
+{
+  "name": "base",
+  "description": "",
+  "default_attributes": {
+
+  },
+  "run_list": [
+    "recipe[audit-telnet]",
+    "recipe[audit-shell-shock]",
+    "recipe[audit-packages]"
+  ]
+}
