@@ -1,0 +1,7 @@
+name 'audit-packages'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures audit-packages'
+long_description 'Installs/Configures audit-packages'
+version '0.1.0'
