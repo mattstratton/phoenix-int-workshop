@@ -4,7 +4,12 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-packages = %w(openssl ca-certificates openssh tzdata)
+packages = []
+if node['platform_family'] == 'rhel'
+  packages = %w(openssl ca-certificates openssh tzdata)
+elsif node['platform_family'] == 'debian'
+  packages = %w(openssl ca-certificates openssh-client openssh-server tzdata)
+end
 
 packages.each do |p|
   package p do
