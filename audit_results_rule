@@ -1,4 +1,10 @@
-rules 'audit-results'
+active:      true
+id:          3b29d218-f66d-4daf-8f1a-9515350fc845
+modified_at: 2015-08-25T13:22:06Z
+modified_by: chefadmin
+name:        audit_results
+org_name:    chef
+rule:        rules 'audit-results'
   rule on run_control_group
   when
     status = 'success'
@@ -20,3 +26,5 @@ rules 'audit-results'
 ')
   end
 end
+with:
+  priority: 0
