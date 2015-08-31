@@ -1,0 +1,22 @@
+rules 'audit-results'
+  rule on run_control_group
+  when
+    status = 'success'
+  then
+    notify('slack-_nharvey_analytics','
+{
+  "username": "Audit OK",
+  "icon_emoji": ":ok:",
+  "text" : "{{message.name}} (cookbook {{message.cookbook_name}}) had `{{message.number_succeeded}}` successful audit test(s) on node `{{message.run.node_name}}` in organization `{{message.organization_name}}`"
+}
+')
+  otherwise
+    notify('slack-_nharvey_analytics','
+{
+"username": "Audit Alarm",
+"icon_emoji": ":rotating_light:",
+"text": "{{message.name}} (cookbook {{message.cookbook_name}}) had `{{message.number_failed}}` failed audit test(s) on node `{{message.run.node_name}}` in organization `{{message.organization_name}}`"
+}
+')
+  end
+end
