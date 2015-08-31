@@ -7,7 +7,7 @@
 control_group 'Shell Shock' do
   control 'CVE-2014-6271' do
     it 'is remediated' do
-      expect(command("env x='() { :;}; echo vulnerable' bash -c \"echo this is a test\"").stdout).not_to contain /vulnerable/
+      expect(command("env x='() { :;}; echo vulnerable' bash -c \"echo this is a test\"").stdout).not_to contain(/vulnerable/)
     end
   end
 
@@ -20,14 +20,14 @@ control_group 'Shell Shock' do
   control 'CVE-2014-7186' do
     it 'is remediated' do
       expect(command("bash -c 'true <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF' ||
-echo \"CVE-2014-7186 vulnerable, redir_stack\"").stdout).not_to contain /CVE-2014-7186 vulnerable, redir_stack/
+echo \"CVE-2014-7186 vulnerable, redir_stack\"").stdout).not_to contain(/CVE-2014-7186 vulnerable, redir_stack/)
     end
   end
 
   control 'CVE-2014-7187' do
     it 'is remediated' do
       expect(command("(for x in {1..200} ; do echo \"for x$x in ; do :\"; done; for x in {1..200} ; do echo done ; done) | bash ||
-echo \"CVE-2014-7187 vulnerable, word_lineno\"").stdout).not_to contain /CVE-2014-7187 vulnerable, word_lineno/
+echo \"CVE-2014-7187 vulnerable, word_lineno\"").stdout).not_to contain(/CVE-2014-7187 vulnerable, word_lineno/)
     end
   end
 
@@ -39,7 +39,7 @@ echo \"CVE-2014-7187 vulnerable, word_lineno\"").stdout).not_to contain /CVE-201
 
   control 'CVE-2014-6277' do
     it 'is remediated' do
-      expect(command("bash -c \"f() { x() { _;}; x() { _;} <<a; }\" 2>/dev/null || echo vulnerable").stdout).not_to contain /vulnerable/ 
+      expect(command("bash -c \"f() { x() { _;}; x() { _;} <<a; }\" 2>/dev/null || echo vulnerable").stdout).not_to contain(/vulnerable/)
     end
   end
 end
