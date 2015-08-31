@@ -1,13 +1,6 @@
 {
   "name": "base",
   "description": "",
-  "default_attributes": {
-    "chef_client" : {
-      "config" : {
-        "audit_mode" : ":enabled"
-      }
-    }
-  },
   "run_list": [
     "recipe[my_chef-client]",
     "recipe[audit-telnet]",
