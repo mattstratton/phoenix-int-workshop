@@ -2,9 +2,8 @@
   "name": "base",
   "description": "",
   "run_list": [
-    "recipe[my_chef-client]",
-    "recipe[audit-telnet]",
-    "recipe[audit-shell-shock]",
-    "recipe[audit-packages]"
+    "recipe[my_chef-client]" //,
+    // "role[audit]",
+    // "role[remediate]"
   ]
 }

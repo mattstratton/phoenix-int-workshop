@@ -1,0 +1,8 @@
+{
+  "name": "remediate",
+  "description": "",
+  "run_list": [
+    "recipe[my_packages]",
+    "recipe[telnet]"
+  ]
+}
