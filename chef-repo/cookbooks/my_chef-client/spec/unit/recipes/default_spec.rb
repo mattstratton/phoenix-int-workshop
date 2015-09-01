@@ -25,13 +25,13 @@ describe 'my_chef-client::default' do
       expect(chef_run).to include_recipe 'chef-client::config'
     end
 
-    it 'sets the chef-client to run every 5 minutes' do
-      expect(chef_run.node['chef_client']['interval']).to eq '300'
-    end
+    # it 'sets the chef-client to run every 5 minutes' do
+    #   expect(chef_run.node['chef_client']['interval']).to eq '300'
+    # end
 
-    it 'sets the chef-client run to have a splay of 1 minute' do
-      expect(chef_run.node['chef_client']['splay']).to eq '60'
-    end
+    # it 'sets the chef-client run to have a splay of 1 minute' do
+    #   expect(chef_run.node['chef_client']['splay']).to eq '60'
+    # end
 
     it 'enables audit_mode' do
       expect(chef_run.node['chef_client']['config']['audit_mode']).to eq 'enabled'
